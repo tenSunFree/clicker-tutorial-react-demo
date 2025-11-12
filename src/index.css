@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Components：把原本的 .banner / .buy / .sell / .game / .clicker / .info 做成語義化可複用類 ===== */
+@layer components {
+  /* 取代 .banner */
+  .banner-bar {
+    @apply fixed left-0 top-0 w-screen bg-amber-300 py-3 z-[100];
+  }
+
+  /* 取代 .buy */
+  .btn-buy {
+    @apply block w-[90vw] md:w-48 mx-auto my-4 px-4 py-2
+           border-2 border-gray-500 rounded-[1rem_0]
+           text-base font-bold bg-gray-300 cursor-pointer;
+  }
+
+  /* 取代 .sell */
+  .btn-sell {
+    @apply absolute right-[1%] top-[60%]
+           md:left-[94%] md:top-1/2 md:-translate-y-1/2
+           px-3 py-2 rounded-full border border-red-500;
+  }
+
+  /* 取代 .game */
+  .game-shell {
+    @apply flex flex-col items-center justify-center my-20 mx-2 md:my-0;
+  }
+
+  /* 取代 .clicker */
+  .clicker-card {
+    @apply relative block w-[90vw] md:w-[45rem] my-2
+           px-2 md:px-8
+           border-4 border-gray-500 rounded-[1rem_0]
+           md:flex md:justify-between md:items-center;
+  }
+
+  /* 取代 .info */
+  .info-left {
+    @apply text-left;
+  }
+}
+
+/* ===== Utilities：隱藏捲軸（Tailwind 沒內建，保留） ===== */
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* （選用）如果你想統一全站字型/基本文字色，可加在 base 層
+@layer base {
+  body { @apply font-sans text-neutral-900; }
+}
+*/

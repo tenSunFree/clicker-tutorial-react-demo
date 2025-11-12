@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+/* 告訴 CLI 要掃哪些檔案，才能生成對應的類別 */
+@source "./index.html";
+@source "./src/**/*.{js,jsx,ts,tsx}";
